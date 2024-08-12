@@ -23,11 +23,12 @@
       "DATABASE_PASSWORD": "@database-password",
       "DATABASE_NAME": "@database-name"
     },
-    "functions": {
-      "api/**/*.js": {
-        "memory": 1024,
-        "maxDuration": 10
-      }
-    }
+ 
+        "functions": {
+          "api/users/**/*.js": {
+            "maxDuration": 30
+          }
+        }
+ 
   }
   
