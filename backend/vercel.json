@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "name": "dynamic-banner-page",
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/api/$1.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ],
+    "env": {
+      "DATABASE_HOST": "@database-host",
+      "DATABASE_USER": "@database-user",
+      "DATABASE_PASSWORD": "@database-password",
+      "DATABASE_NAME": "@database-name"
+    },
+    "functions": {
+      "api/**/*.js": {
+        "memory": 1024,
+        "maxDuration": 10
+      }
+    }
+  }
+  
